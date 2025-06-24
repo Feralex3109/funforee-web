@@ -1,0 +1,370 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FUNFOREE - Qué Hacemos</title>
+    <meta name="description"
+        content="Descubre las acciones, principios y compromiso de FUNFOREE en salud, equidad social, ambiente y trabajo comunitario en Caquetá y región amazónica.">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background: #f0f2f5;
+        }
+
+        header {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 10px 20px;
+            background: linear-gradient(to right, #fff 70%, #007BFF 100%);
+            flex-wrap: wrap;
+        }
+
+        header img {
+            height: 110px;
+        }
+
+        header h1 {
+            font-size: 1.5em;
+            margin: 0;
+            text-align: center;
+            line-height: 1.1;
+        }
+
+        header h1 span:first-child {
+            color: #e53935;
+            font-weight: bold;
+        }
+
+        header h1 span:last-child {
+            color: #007BFF;
+            font-weight: bold;
+        }
+
+        .donar-btn {
+            background-color: #007BFF;
+            color: white;
+            padding: 10px 22px;
+            border: none;
+            cursor: pointer;
+            font-size: 1em;
+            border-radius: 5px;
+            text-decoration: none;
+            margin-top: 10px;
+            transition: background 0.2s;
+            font-weight: bold;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+        }
+
+        .donar-btn:hover {
+            background-color: #005bb5;
+        }
+
+        nav {
+            background: linear-gradient(to right, #007BFF 0%, #36A2EB 100%);
+        }
+
+        nav ul {
+            list-style-type: none;
+            margin: 0;
+            padding: 0;
+            text-align: center;
+        }
+
+        nav ul li {
+            display: inline-block;
+            position: relative;
+        }
+
+        nav ul li a {
+            color: white;
+            padding: 12px 20px;
+            text-decoration: none;
+            display: block;
+            font-weight: bold;
+        }
+
+        nav ul li ul {
+            display: none;
+            position: absolute;
+            background-color: #4CAF50;
+            min-width: 160px;
+            border-radius: 5px;
+            z-index: 2;
+        }
+
+        nav ul li:hover ul,
+        nav ul li:focus-within ul {
+            display: block;
+        }
+
+        nav ul li ul li {
+            display: block;
+        }
+
+        nav ul li ul li a {
+            padding: 10px 18px;
+        }
+
+        nav ul li:hover>a,
+        nav ul li:focus-within>a {
+            background-color: rgba(0, 0, 0, 0.10);
+        }
+
+        .titulo-seccion {
+            text-align: center;
+            color: #007BFF;
+            margin: 34px 0 22px 0;
+            font-size: 2em;
+        }
+
+        .tarjetas-container {
+            display: flex;
+            flex-direction: row;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 22px;
+            max-width: 1100px;
+            margin: auto;
+            padding: 24px 10px 20px 10px;
+        }
+
+        .tarjeta {
+            background-color: white;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.11);
+            padding: 22px 20px 18px 20px;
+            width: 340px;
+            min-width: 260px;
+            box-sizing: border-box;
+            transition: transform 0.3s, box-shadow 0.3s;
+            margin-bottom: 0;
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-start;
+        }
+
+        .tarjeta:hover {
+            transform: translateY(-4px) scale(1.01);
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.16);
+        }
+
+        .tarjeta h2 {
+            color: #4CAF50;
+            margin-bottom: 11px;
+            text-align: center;
+            font-size: 1.18em;
+        }
+
+        .tarjeta p {
+            text-align: justify;
+            line-height: 1.65;
+            color: #363636;
+            margin-bottom: 0;
+        }
+
+        .tarjeta:first-child {
+            width: 100%;
+            min-width: 260px;
+            max-width: 97vw;
+        }
+
+        @media (max-width: 900px) {
+            .tarjetas-container {
+                flex-direction: column;
+                align-items: center;
+                gap: 14px;
+            }
+
+            .tarjeta {
+                width: 96vw;
+                min-width: 0;
+                max-width: 700px;
+            }
+        }
+
+        @media (max-width: 600px) {
+            header {
+                flex-direction: column;
+                align-items: center;
+                text-align: center;
+            }
+
+            header img {
+                height: 75px;
+            }
+
+            .titulo-seccion {
+                font-size: 1.23em;
+                margin-top: 23px;
+            }
+
+            .tarjeta {
+                padding: 14px 6px 12px 8px;
+                font-size: 1em;
+            }
+        }
+
+        footer {
+            background-color: #007BFF;
+            color: white;
+            text-align: center;
+            padding: 18px;
+            font-size: 1em;
+        }
+
+        footer a {
+            color: #FFFF00;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        footer a:hover {
+            text-decoration: underline;
+        }
+
+        .redes-sociales {
+            margin-top: 11px;
+        }
+
+        .icono-red {
+            width: 37px;
+            height: 37px;
+            margin: 0 8px;
+            vertical-align: middle;
+            border-radius: 50%;
+            object-fit: contain;
+            background: white;
+            transition: filter 0.25s;
+        }
+
+        .icono-red:hover {
+            filter: brightness(1.17);
+        }
+    </style>
+</head>
+
+<body>
+
+    <header>
+        <img src="./img/logo.png" alt="Logo FUNFOREE">
+        <h1>
+            <span>Fundación Forjadores de Esperanza y Equidad</span><br>
+            <span>FUNFOREE</span>
+        </h1>
+        <a href="donar.html" class="donar-btn">¡Donar Ahora!</a>
+    </header>
+
+    <nav>
+        <ul>
+            <li><a href="index.html">Inicio</a></li>
+            <li>
+                <a href="#">Conócenos</a>
+                <ul>
+                    <li><a href="quienes-somos.html">Quiénes Somos</a></li>
+                    <li><a href="#">Qué Hacemos</a></li>
+                    <li><a href="historia.html">Historia</a></li>
+                    <li><a href="equipo.html">Equipo</a></li>
+                </ul>
+            </li>
+            <li><a href="noticias.html">Noticias</a></li>
+            <li>
+                <a href="#">Apóyanos</a>
+                <ul>
+                    <li><a href="apoyo-economico.html">Apoyo Económico</a></li>
+                    <li><a href="donacion-especie.html">Donación en Especie</a></li>
+                    <li><a href="voluntariado.html">Voluntariado</a></li>
+                </ul>
+            </li>
+            <li><a href="contacto.html">Contacto</a></li>
+        </ul>
+    </nav>
+
+    <h1 class="titulo-seccion">Qué Hacemos</h1>
+
+    <div class="tarjetas-container">
+        <div class="tarjeta">
+            <h2>Principios Ideológicos</h2>
+            <p>
+                La Fundación Forjadores de Esperanza y Equidad – FUNFOREE basa su labor en una ideología profundamente
+                humanista, solidaria y transformadora, que reconoce la dignidad de cada ser humano como el principio y
+                fin de toda acción social. Sus principios ideológicos fundamentales son:
+            </p>
+            <p><strong>1. Equidad social:</strong> Creemos en la necesidad de equilibrar las desigualdades históricas
+                mediante acciones afirmativas que garanticen el acceso real a derechos, recursos y oportunidades para
+                todos, especialmente para quienes han sido excluidos por razones de salud, territorio o condición
+                socioeconómica.</p>
+            <p><strong>2. Justicia desde lo comunitario:</strong> Entendemos la justicia no solo como un principio
+                legal, sino como un compromiso ético con el bienestar colectivo, la reparación social y la defensa
+                activa de los sectores más vulnerables.</p>
+            <p><strong>3. Empoderamiento ciudadano:</strong> Promovemos la autonomía, participación y liderazgo de las
+                comunidades en la solución de sus propios desafíos, reconociendo su saber, experiencia y capacidad
+                organizativa como motores de transformación.</p>
+            <p><strong>4. Compromiso con la vida y la dignidad:</strong> Nuestra labor parte de un respeto profundo por
+                la vida humana, la diversidad, la salud y la dignidad de cada persona, sin discriminación alguna.</p>
+            <p><strong>5. Enfoque territorial y diferencial:</strong> Reconocemos las particularidades culturales,
+                geográficas y sociales de los territorios donde trabajamos, y por ello adaptamos nuestras acciones con
+                enfoque diferencial, interseccional y participativo.</p>
+            <p><strong>6. Corresponsabilidad institucional:</strong> Creemos en el trabajo conjunto con el Estado, la
+                sociedad civil y el sector privado, como estrategia para potenciar el impacto de nuestras acciones y
+                construir soluciones sostenibles.</p>
+        </div>
+        <div class="tarjeta">
+            <h2>Principios Éticos</h2>
+            <p><strong>Dignidad humana:</strong> Reconocemos el valor intrínseco de toda persona, sin importar su
+                condición, diagnóstico o procedencia.</p>
+            <p><strong>Transparencia:</strong> Actuamos con integridad, claridad y responsabilidad en la gestión de
+                recursos y la toma de decisiones.</p>
+            <p><strong>Solidaridad:</strong> Practicamos la empatía activa, poniendo nuestras capacidades al servicio de
+                quienes más lo necesitan.</p>
+            <p><strong>Compromiso:</strong> Cumplimos con responsabilidad cada una de nuestras acciones y alianzas en
+                beneficio de las comunidades.</p>
+        </div>
+        <div class="tarjeta">
+            <h2>Principios Sociales y Ambientales</h2>
+            <p><strong>Principios Sociales:</strong></p>
+            <p><strong>Equidad e inclusión:</strong> Promovemos la igualdad de oportunidades y la no discriminación por
+                razones de salud, género, etnia o territorio.</p>
+            <p><strong>Justicia social:</strong> Buscamos corregir desigualdades estructurales mediante acciones que
+                dignifiquen y empoderen a las personas excluidas.</p>
+            <p><strong>Participación comunitaria:</strong> Valoramos y fomentamos el protagonismo de las comunidades en
+                los procesos de transformación social.</p>
+            <p><strong>Corresponsabilidad:</strong> Creemos en el trabajo articulado entre sociedad civil, Estado y
+                sector privado para lograr impactos sostenibles.</p>
+            <p><strong>Principios Ambientales:</strong></p>
+            <p><strong>Respeto por el entorno natural:</strong> Promovemos prácticas que favorezcan la sostenibilidad
+                ambiental en cada intervención territorial.</p>
+            <p><strong>Educación ambiental:</strong> Incorporamos la conciencia ecológica como parte del desarrollo
+                humano integral.</p>
+            <p><strong>Uso responsable de los recursos:</strong> Aplicamos criterios de eficiencia y sostenibilidad en
+                nuestras operaciones y proyectos.</p>
+        </div>
+    </div>
+
+    <footer>
+        <div>
+            <p>Contacto: <a href="mailto:contacto@funforee.com">contacto@funforee.com</a></p>
+            <p>Teléfono móvil: 3151273435</p>
+            <p>WhatsApp: 3142764121</p>
+            <p>Dirección: Calle 2 Sur No. 13A - 03, Urbanización El Bosque II etapa</p>
+            <div class="redes-sociales">
+                <a href="https://wa.me/5731527435" target="_blank" title="WhatsApp"><img src="./img/whatsapp-icon.png"
+                        alt="WhatsApp" class="icono-red"></a>
+                <a href="https://instagram.com/" target="_blank" title="Instagram"><img src="./img/instagram-icon.png"
+                        alt="Instagram" class="icono-red"></a>
+                <a href="https://facebook.com/" target="_blank" title="Facebook"><img src="./img/facebook-icon.png"
+                        alt="Facebook" class="icono-red"></a>
+                <a href="https://tiktok.com/" target="_blank" title="TikTok"><img src="./img/tiktok-icon.png"
+                        alt="TikTok" class="icono-red"></a>
+            </div>
+        </div>
+    </footer>
+    <script src="js/script.js"></script>
+
+</body>
+
+</html>

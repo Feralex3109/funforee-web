@@ -1,0 +1,659 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FUNFOREE - Afiliación y Contacto</title>
+    <meta name="description"
+        content="Afíliate y contacta a la Fundación Forjadores de Esperanza y Equidad (FUNFOREE). Apoya y accede a servicios para pacientes y familias.">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f0f2f5;
+        }
+
+        header {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 10px 20px;
+            background: linear-gradient(to right, #fff 70%, #007BFF 100%);
+            flex-wrap: wrap;
+        }
+
+        header img {
+            height: 110px;
+        }
+
+        header h1 {
+            font-size: 1.5em;
+            margin: 0;
+            text-align: center;
+            line-height: 1.1;
+        }
+
+        header h1 span:first-child {
+            color: #e53935;
+            font-weight: bold;
+        }
+
+        header h1 span:last-child {
+            color: #007BFF;
+            font-weight: bold;
+        }
+
+        .donar-btn {
+            background-color: #007BFF;
+            color: white;
+            padding: 10px 22px;
+            border: none;
+            cursor: pointer;
+            font-size: 1em;
+            border-radius: 5px;
+            text-decoration: none;
+            margin-top: 10px;
+            transition: background 0.2s;
+            font-weight: bold;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+        }
+
+        .donar-btn:hover {
+            background-color: #005bb5;
+        }
+
+        nav {
+            background: linear-gradient(to right, #007BFF 0%, #36A2EB 100%);
+        }
+
+        nav ul {
+            list-style-type: none;
+            margin: 0;
+            padding: 0;
+            text-align: center;
+        }
+
+        nav ul li {
+            display: inline-block;
+            position: relative;
+        }
+
+        nav ul li a {
+            color: white;
+            padding: 12px 20px;
+            text-decoration: none;
+            display: block;
+            font-weight: bold;
+        }
+
+        nav ul li ul {
+            display: none;
+            position: absolute;
+            background-color: #4CAF50;
+            min-width: 160px;
+            border-radius: 5px;
+            z-index: 2;
+        }
+
+        nav ul li:hover ul,
+        nav ul li:focus-within ul {
+            display: block;
+        }
+
+        nav ul li ul li {
+            display: block;
+        }
+
+        nav ul li ul li a {
+            padding: 10px 18px;
+        }
+
+        nav ul li:hover>a,
+        nav ul li:focus-within>a {
+            background-color: rgba(0, 0, 0, 0.10);
+        }
+
+        h1 {
+            text-align: center;
+            color: #007BFF;
+            margin: 34px 0 22px 0;
+            font-size: 2em;
+        }
+
+        .contacto-container {
+            max-width: 1200px;
+            margin: auto;
+            background: white;
+            padding: 24px 14px;
+            border-radius: 10px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.10);
+        }
+
+        .contacto-container h2 {
+            color: #4CAF50;
+            margin-bottom: 22px;
+            text-align: center;
+        }
+
+        form {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+            justify-content: space-between;
+        }
+
+        .columna {
+            flex: 1;
+            min-width: 300px;
+            max-width: 560px;
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+            padding: 0 5px;
+        }
+
+        label {
+            font-weight: bold;
+            margin-top: 7px;
+        }
+
+        input,
+        select,
+        textarea {
+            padding: 9px;
+            border-radius: 5px;
+            border: 1px solid #ccc;
+        }
+
+        input[type="radio"] {
+            width: auto;
+        }
+
+        button[type="submit"] {
+            background-color: #4CAF50;
+            color: white;
+            padding: 10px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 1em;
+            font-weight: bold;
+            margin-top: 12px;
+        }
+
+        button[type="submit"]:hover {
+            background-color: #43a047;
+        }
+
+        .pse-button {
+            background-color: #1E90FF;
+            color: white;
+            font-weight: bold;
+            padding: 12px;
+            border-radius: 5px;
+            margin-top: 8px;
+            border: none;
+            cursor: pointer;
+            width: 100%;
+        }
+
+        .pse-button:hover {
+            background-color: #187bcd;
+        }
+
+        @media (max-width: 900px) {
+            form {
+                flex-direction: column;
+            }
+
+            .columna {
+                max-width: 97vw;
+                padding: 0;
+            }
+        }
+
+        @media (max-width: 600px) {
+            header {
+                flex-direction: column;
+                align-items: center;
+                text-align: center;
+            }
+
+            header img {
+                height: 75px;
+            }
+
+            h1 {
+                font-size: 1.22em;
+                margin-top: 23px;
+            }
+        }
+
+        footer {
+            background-color: #007BFF;
+            color: white;
+            text-align: center;
+            padding: 18px;
+            font-size: 1em;
+        }
+
+        footer a {
+            color: #FFFF00;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        footer a:hover {
+            text-decoration: underline;
+        }
+
+        .redes-sociales {
+            margin-top: 11px;
+        }
+
+        .icono-red {
+            width: 37px;
+            height: 37px;
+            margin: 0 8px;
+            vertical-align: middle;
+            border-radius: 50%;
+            object-fit: contain;
+            background: white;
+            transition: filter 0.25s;
+        }
+
+        .icono-red:hover {
+            filter: brightness(1.17);
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <img src="./img/logo.png" alt="Logo FUNFOREE">
+        <h1>
+            <span>Fundación Forjadores de Esperanza y Equidad</span><br>
+            <span>FUNFOREE</span>
+        </h1>
+        <a href="donar.html" class="donar-btn">¡Donar Ahora!</a>
+    </header>
+
+    <nav>
+        <ul>
+            <li><a href="index.html">Inicio</a></li>
+            <li>
+                <a href="#">Conócenos</a>
+                <ul>
+                    <li><a href="quienes-somos.html">Quiénes Somos</a></li>
+                    <li><a href="que-hacemos.html">Qué Hacemos</a></li>
+                    <li><a href="historia.html">Historia</a></li>
+                    <li><a href="equipo.html">Equipo</a></li>
+                </ul>
+            </li>
+            <li><a href="noticias.html">Noticias</a></li>
+            <li>
+                <a href="#">Apóyanos</a>
+                <ul>
+                    <li><a href="apoyo-economico.html">Apoyo Económico</a></li>
+                    <li><a href="donacion-especie.html">Donación en Especie</a></li>
+                    <li><a href="voluntariado.html">Voluntariado</a></li>
+                </ul>
+            </li>
+            <li><a href="contacto.html">Contacto</a></li>
+        </ul>
+    </nav>
+
+    <h1>Afiliación y Contacto</h1>
+
+    <div class="contacto-container">
+        <h2>Formulario de Afiliación</h2>
+<<<<<<< HEAD
+        <form method="POST" action="/funforee/php/guardar-datos.php" autocomplete="off">
+=======
+        <form method="POST" action="/php/guardar-datos.php" autocomplete="off">
+>>>>>>> f744de1 (funforee)
+            <div class="columna">
+                <label>Tipo de Documento</label>
+                <select name="tipo_documento" required>
+                    <option>Seleccione</option>
+                    <option>CC</option>
+                    <option>CE</option>
+                    <option>Pasaporte</option>
+                    <option>TI</option>
+                    <option>NIUP</option>
+                    <option>Otro</option>
+                </select>
+                <label>Número de Identificación</label>
+                <input type="text" name="identificacion" required>
+                <label>Nombres</label>
+                <input type="text" name="nombre" required>
+                <label>Apellidos</label>
+                <input type="text" name="apellidos" required>
+                <label>Estado Civil</label>
+                <select name="estado_civil" required>
+                    <option>Seleccione</option>
+                    <option>Soltero</option>
+                    <option>Casado</option>
+                    <option>Unión Libre</option>
+                    <option>Divorciado</option>
+                    <option>Viudo</option>
+                </select>
+                <label>Género</label>
+                <div style="display: flex; align-items: center; gap: 10px;">
+                    <input type="radio" name="genero" value="femenino" required><label
+                        style="margin:0;">Femenino</label>
+                    <input type="radio" name="genero" value="masculino" required><label
+                        style="margin:0;">Masculino</label>
+                    <input type="radio" name="genero" value="otro" required><label style="margin:0;">Otro</label>
+                </div>
+                <label>Edad</label>
+                <input type="number" name="edad" min="0" max="100" required>
+                <label>Fecha de Nacimiento</label>
+                <input type="date" name="fecha_nacimiento" required>
+                <label>Departamento de Nacimiento</label>
+                <select name="departamento_nacimiento" required>
+                    <option>Seleccione</option>
+                    <option>Amazonas</option>
+                    <option>Arauca</option>
+                    <option>Atlántico</option>
+                    <option>Bolívar</option>
+                    <option>Boyacá</option>
+                    <option>Caldas</option>
+                    <option>Caquetá</option>
+                    <option>Casanare</option>
+                    <option>Cauca</option>
+                    <option>Cesar</option>
+                    <option>Chocó</option>
+                    <option>Córdoba</option>
+                    <option>Cundinamarca</option>
+                    <option>Guainía</option>
+                    <option>Guaviare</option>
+                    <option>Huila</option>
+                    <option>La Guajira</option>
+                    <option>Magdalena</option>
+                    <option>Meta</option>
+                    <option>Nariño</option>
+                    <option>Norte de Santander</option>
+                    <option>Putumayo</option>
+                    <option>Quindío</option>
+                    <option>Risaralda</option>
+                    <option>San Andrés y Providencia</option>
+                    <option>Santander</option>
+                    <option>Sucre</option>
+                    <option>Tolima</option>
+                    <option>Valle del Cauca</option>
+                    <option>Vaupés</option>
+                    <option>Vichada</option>
+                </select>
+                <label>Municipio de Nacimiento</label>
+                <select name="municipio_nacimiento" required>
+                    <option>Seleccione</option>
+                    <option>Arauca</option>
+                    <option>Armenia</option>
+                    <option>Barranquilla</option>
+                    <option>Bogotá</option>
+                    <option>Bucaramanga</option>
+                    <option>Cali</option>
+                    <option>Cartagena de Indias</option>
+                    <option>Cúcuta</option>
+                    <option>Florencia</option>
+                    <option>Ibagué</option>
+                    <option>Inírida</option>
+                    <option>Leticia</option>
+                    <option>Manizales</option>
+                    <option>Medellín</option>
+                    <option>Mitú</option>
+                    <option>Mocoa</option>
+                    <option>Montería</option>
+                    <option>Neiva</option>
+                    <option>Pasto</option>
+                    <option>Pereira</option>
+                    <option>Popayán</option>
+                    <option>Puerto Asís</option>
+                    <option>Quibdó</option>
+                    <option>Riohacha</option>
+                    <option>San Andrés y Providencia</option>
+                    <option>San José del Guaviare</option>
+                    <option>Santa Marta</option>
+                    <option>Sincelejo</option>
+                    <option>Tunja</option>
+                    <option>Valledupar</option>
+                    <option>Villavicencio</option>
+                    <option>Yopal</option>
+                </select>
+                <label>Fecha de Expedición</label>
+                <input type="date" name="fecha_expedicion" required>
+                <label>Departamento de Expedición</label>
+                <select name="departamento_expedicion" required>
+                    <option>Seleccione</option>
+                    <option>Amazonas</option>
+                    <option>Arauca</option>
+                    <option>Atlántico</option>
+                    <option>Bolívar</option>
+                    <option>Boyacá</option>
+                    <option>Caldas</option>
+                    <option>Caquetá</option>
+                    <option>Casanare</option>
+                    <option>Cauca</option>
+                    <option>Cesar</option>
+                    <option>Chocó</option>
+                    <option>Córdoba</option>
+                    <option>Cundinamarca</option>
+                    <option>Guainía</option>
+                    <option>Guaviare</option>
+                    <option>Huila</option>
+                    <option>La Guajira</option>
+                    <option>Magdalena</option>
+                    <option>Meta</option>
+                    <option>Nariño</option>
+                    <option>Norte de Santander</option>
+                    <option>Putumayo</option>
+                    <option>Quindío</option>
+                    <option>Risaralda</option>
+                    <option>San Andrés y Providencia</option>
+                    <option>Santander</option>
+                    <option>Sucre</option>
+                    <option>Tolima</option>
+                    <option>Valle del Cauca</option>
+                    <option>Vaupés</option>
+                    <option>Vichada</option>
+                </select>
+                <label>Municipio de Expedición</label>
+                <select name="municipio_expedicion" required>
+                    <option>Seleccione</option>
+                    <option>Arauca</option>
+                    <option>Armenia</option>
+                    <option>Barranquilla</option>
+                    <option>Bogotá</option>
+                    <option>Bucaramanga</option>
+                    <option>Cali</option>
+                    <option>Cartagena de Indias</option>
+                    <option>Cúcuta</option>
+                    <option>Florencia</option>
+                    <option>Ibagué</option>
+                    <option>Inírida</option>
+                    <option>Leticia</option>
+                    <option>Manizales</option>
+                    <option>Medellín</option>
+                    <option>Mitú</option>
+                    <option>Mocoa</option>
+                    <option>Montería</option>
+                    <option>Neiva</option>
+                    <option>Pasto</option>
+                    <option>Pereira</option>
+                    <option>Popayán</option>
+                    <option>Puerto Asís</option>
+                    <option>Quibdó</option>
+                    <option>Riohacha</option>
+                    <option>San Andrés y Providencia</option>
+                    <option>San José del Guaviare</option>
+                    <option>Santa Marta</option>
+                    <option>Sincelejo</option>
+                    <option>Tunja</option>
+                    <option>Valledupar</option>
+                    <option>Villavicencio</option>
+                    <option>Yopal</option>
+                </select>
+            </div>
+            <div class="columna">
+                <label>Departamento de Residencia</label>
+                <select name="departamento_residencia" required>
+                    <option>Seleccione</option>
+                    <option>Amazonas</option>
+                    <option>Arauca</option>
+                    <option>Atlántico</option>
+                    <option>Bolívar</option>
+                    <option>Boyacá</option>
+                    <option>Caldas</option>
+                    <option>Caquetá</option>
+                    <option>Casanare</option>
+                    <option>Cauca</option>
+                    <option>Cesar</option>
+                    <option>Chocó</option>
+                    <option>Córdoba</option>
+                    <option>Cundinamarca</option>
+                    <option>Guainía</option>
+                    <option>Guaviare</option>
+                    <option>Huila</option>
+                    <option>La Guajira</option>
+                    <option>Magdalena</option>
+                    <option>Meta</option>
+                    <option>Nariño</option>
+                    <option>Norte de Santander</option>
+                    <option>Putumayo</option>
+                    <option>Quindío</option>
+                    <option>Risaralda</option>
+                    <option>San Andrés y Providencia</option>
+                    <option>Santander</option>
+                    <option>Sucre</option>
+                    <option>Tolima</option>
+                    <option>Valle del Cauca</option>
+                    <option>Vaupés</option>
+                    <option>Vichada</option>
+                </select>
+                <label>Municipio de Residencia</label>
+                <select name="municipio_residencia" required>
+                    <option>Seleccione</option>
+                    <option>Arauca</option>
+                    <option>Armenia</option>
+                    <option>Barranquilla</option>
+                    <option>Bogotá</option>
+                    <option>Bucaramanga</option>
+                    <option>Cali</option>
+                    <option>Cartagena de Indias</option>
+                    <option>Cúcuta</option>
+                    <option>Florencia</option>
+                    <option>Ibagué</option>
+                    <option>Inírida</option>
+                    <option>Leticia</option>
+                    <option>Manizales</option>
+                    <option>Medellín</option>
+                    <option>Mitú</option>
+                    <option>Mocoa</option>
+                    <option>Montería</option>
+                    <option>Neiva</option>
+                    <option>Pasto</option>
+                    <option>Pereira</option>
+                    <option>Popayán</option>
+                    <option>Puerto Asís</option>
+                    <option>Quibdó</option>
+                    <option>Riohacha</option>
+                    <option>San Andrés y Providencia</option>
+                    <option>San José del Guaviare</option>
+                    <option>Santa Marta</option>
+                    <option>Sincelejo</option>
+                    <option>Tunja</option>
+                    <option>Valledupar</option>
+                    <option>Villavicencio</option>
+                    <option>Yopal</option>
+                </select>
+                <label>Dirección</label>
+                <input type="text" name="direccion" required>
+                <label>Correo Electrónico</label>
+                <input type="email" name="correo" required>
+                <label>EPS</label>
+                <select name="eps" required>
+                    <option>Seleccione</option>
+                    <option>SURA</option>
+                    <option>Nueva EPS</option>
+                    <option>Sanitas</option>
+                    <option>Asmetsalud</option>
+                    <option>Capital Salud</option>
+                    <option>Compensar</option>
+                    <option>Coosalud</option>
+                    <option>Famisanar</option>
+                    <option>Emssanar</option>
+                    <option>Salud Total</option>
+                    <option>Savia Salud</option>
+                </select>
+                <label>Régimen</label>
+                <div style="display: flex; align-items: center; gap: 10px;">
+                    <input type="radio" name="regimen" value="contributivo" required><label
+                        style="margin:0;">Contributivo</label>
+                    <input type="radio" name="regimen" value="subsidiado" required><label
+                        style="margin:0;">Subsidiado</label>
+                </div>
+                <label>RH</label>
+                <select name="rh" required>
+                    <option>Seleccione</option>
+                    <option>O+</option>
+                    <option>O-</option>
+                    <option>A+</option>
+                    <option>A-</option>
+                    <option>B+</option>
+                    <option>B-</option>
+                    <option>AB+</option>
+                    <option>AB-</option>
+                </select>
+                <label>Patología</label>
+                <select name="tipo_enfermedad" required>
+                    <option>Seleccione</option>
+                    <option>Hemofilia A</option>
+                    <option>Hemofilia B</option>
+                    <option>Hemofilia C</option>
+                    <option>Von Willebrand</option>
+                    <option>Púrpura</option>
+                </select>
+                <label>Estrato</label>
+                <select name="estrato" required>
+                    <option>Seleccione</option>
+                    <option>0</option>
+                    <option>1</option>
+                    <option>2</option>
+                    <option>3</option>
+                    <option>4</option>
+                    <option>5</option>
+                    <option>6</option>
+                </select>
+
+                <button type="submit">Enviar</button>
+                <button type="button" class="pse-button"
+                    onclick="alert('Redirección a pago PSE de cuenta FUNFOREE')">Pagar con PSE</button>
+            </div>
+        </form>
+    </div>
+
+    <footer>
+        <div>
+            <p>Contacto: <a href="mailto:contacto@funforee.com">contacto@funforee.com</a></p>
+            <p>Teléfono móvil: 3151273435</p>
+            <p>WhatsApp: 3142764121</p>
+            <p>Dirección: Calle 2 Sur No. 13A - 03, Urbanización El Bosque II etapa</p>
+            <div class="redes-sociales">
+                <a href="https://wa.me/5731527435" target="_blank" title="WhatsApp"><img src="./img/whatsapp-icon.png"
+                        alt="WhatsApp" class="icono-red"></a>
+                <a href="https://instagram.com/" target="_blank" title="Instagram"><img src="./img/instagram-icon.png"
+                        alt="Instagram" class="icono-red"></a>
+                <a href="https://facebook.com/" target="_blank" title="Facebook"><img src="./img/facebook-icon.png"
+                        alt="Facebook" class="icono-red"></a>
+                <a href="https://tiktok.com/" target="_blank" title="TikTok"><img src="./img/tiktok-icon.png"
+                        alt="TikTok" class="icono-red"></a>
+            </div>
+        </div>
+    </footer>
+    <script src="js/script.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,429 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FUNFOREE - Apoyo Económico</title>
+    <meta name="description"
+        content="Apoya económicamente a la Fundación FUNFOREE. Donaciones y contribuciones para transformar vidas en Caquetá y región amazónica.">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f0f2f5;
+        }
+
+        header {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 10px 20px;
+            background: linear-gradient(to right, #fff 70%, #007BFF 100%);
+            flex-wrap: wrap;
+        }
+
+        header img {
+            height: 110px;
+        }
+
+        header h1 {
+            font-size: 1.5em;
+            margin: 0;
+            text-align: center;
+            line-height: 1.1;
+        }
+
+        header h1 span:first-child {
+            color: #e53935;
+            font-weight: bold;
+        }
+
+        header h1 span:last-child {
+            color: #007BFF;
+            font-weight: bold;
+        }
+
+        .donar-btn {
+            background-color: #007BFF;
+            color: white;
+            padding: 10px 22px;
+            border: none;
+            cursor: pointer;
+            font-size: 1em;
+            border-radius: 5px;
+            text-decoration: none;
+            margin-top: 10px;
+            transition: background 0.2s;
+            font-weight: bold;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+        }
+
+        .donar-btn:hover {
+            background-color: #005bb5;
+        }
+
+        nav {
+            background: linear-gradient(to right, #007BFF 0%, #36A2EB 100%);
+        }
+
+        nav ul {
+            list-style-type: none;
+            margin: 0;
+            padding: 0;
+            text-align: center;
+        }
+
+        nav ul li {
+            display: inline-block;
+            position: relative;
+        }
+
+        nav ul li a {
+            color: white;
+            padding: 12px 20px;
+            text-decoration: none;
+            display: block;
+            font-weight: bold;
+        }
+
+        nav ul li ul {
+            display: none;
+            position: absolute;
+            background-color: #4CAF50;
+            min-width: 160px;
+            border-radius: 5px;
+            z-index: 2;
+        }
+
+        nav ul li:hover ul,
+        nav ul li:focus-within ul {
+            display: block;
+        }
+
+        nav ul li ul li {
+            display: block;
+        }
+
+        nav ul li ul li a {
+            padding: 10px 18px;
+        }
+
+        nav ul li:hover>a,
+        nav ul li:focus-within>a {
+            background-color: rgba(0, 0, 0, 0.10);
+        }
+
+        .titulo-seccion {
+            text-align: center;
+            color: #007BFF;
+            margin: 34px 0 22px 0;
+            font-size: 2em;
+        }
+
+        .apoyanos-container {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 22px;
+            max-width: 1200px;
+            margin: auto;
+            padding: 24px 10px 20px 10px;
+        }
+
+        .columna {
+            flex: 1;
+            min-width: 300px;
+            max-width: 570px;
+            background-color: white;
+            padding: 24px 18px 22px 18px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.11);
+            box-sizing: border-box;
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-start;
+        }
+
+        .columna h2,
+        .columna h3 {
+            color: #4CAF50;
+            margin-bottom: 15px;
+            text-align: center;
+        }
+
+        .columna p,
+        .columna ul {
+            text-align: justify;
+            line-height: 1.6;
+            color: #363636;
+        }
+
+        .columna ul {
+            margin-bottom: 18px;
+        }
+
+        form {
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+        }
+
+        form label {
+            font-weight: bold;
+            margin-bottom: 3px;
+        }
+
+        form input,
+        form select,
+        form textarea {
+            padding: 9px;
+            border-radius: 5px;
+            border: 1px solid #ccc;
+        }
+
+        form button {
+            background-color: #4CAF50;
+            color: white;
+            padding: 11px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 1em;
+            font-weight: bold;
+        }
+
+        form button:hover {
+            background-color: #43a047;
+        }
+
+        .imagen-donacion {
+            margin-top: 17px;
+            text-align: center;
+        }
+
+        .imagen-donacion img {
+            max-width: 100%;
+            border-radius: 10px;
+        }
+
+        @media (max-width: 900px) {
+            .apoyanos-container {
+                flex-direction: column;
+                gap: 12px;
+            }
+
+            .columna {
+                max-width: 97vw;
+                padding: 14px 4vw 15px 4vw;
+            }
+        }
+
+        @media (max-width: 600px) {
+            header {
+                flex-direction: column;
+                align-items: center;
+                text-align: center;
+            }
+
+            header img {
+                height: 75px;
+            }
+
+            .titulo-seccion {
+                font-size: 1.22em;
+                margin-top: 23px;
+            }
+        }
+
+        footer {
+            background-color: #007BFF;
+            color: white;
+            text-align: center;
+            padding: 18px;
+            font-size: 1em;
+        }
+
+        footer a {
+            color: #FFFF00;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        footer a:hover {
+            text-decoration: underline;
+        }
+
+        .redes-sociales {
+            margin-top: 11px;
+        }
+
+        .icono-red {
+            width: 37px;
+            height: 37px;
+            margin: 0 8px;
+            vertical-align: middle;
+            border-radius: 50%;
+            object-fit: contain;
+            background: white;
+            transition: filter 0.25s;
+        }
+
+        .icono-red:hover {
+            filter: brightness(1.17);
+        }
+    </style>
+</head>
+
+<body>
+
+    <header>
+        <img src="./img/logo.png" alt="Logo FUNFOREE">
+        <h1>
+            <span>Fundación Forjadores de Esperanza y Equidad</span><br>
+            <span>FUNFOREE</span>
+        </h1>
+        <a href="donar.html" class="donar-btn">¡Donar Ahora!</a>
+    </header>
+
+    <nav>
+        <ul>
+            <li><a href="index.html">Inicio</a></li>
+            <li>
+                <a href="#">Conócenos</a>
+                <ul>
+                    <li><a href="quienes-somos.html">Quiénes Somos</a></li>
+                    <li><a href="que-hacemos.html">Qué Hacemos</a></li>
+                    <li><a href="historia.html">Historia</a></li>
+                    <li><a href="equipo.html">Equipo</a></li>
+                </ul>
+            </li>
+            <li><a href="noticias.html">Noticias</a></li>
+            <li>
+                <a href="#">Apóyanos</a>
+                <ul>
+                    <li><a href="apoyo-economico.html">Apoyo Económico</a></li>
+                    <li><a href="donacion-especie.html">Donación en Especie</a></li>
+                    <li><a href="voluntariado.html">Voluntariado</a></li>
+                </ul>
+            </li>
+            <li><a href="contacto.html">Contacto</a></li>
+        </ul>
+    </nav>
+
+    <h1 class="titulo-seccion">Apoyo Económico</h1>
+
+    <div class="apoyanos-container">
+        <div class="columna">
+            <h2>Apoyo Económico</h2>
+            <h3>Tu contribución transforma vidas</h3>
+            <p>En la Fundación Forjadores de Esperanza y Equidad – FUNFOREE, sabemos que cada aporte cuenta y tiene el
+                poder de marcar una diferencia real en las vidas de quienes más lo necesitan. Gracias a las
+                contribuciones económicas de personas y organizaciones comprometidas, hemos logrado avanzar en nuestro
+                propósito de garantizar los derechos fundamentales de pacientes con enfermedades huérfanas y poblaciones
+                en situación de vulnerabilidad.</p>
+            <p><strong>Tu apoyo económico nos permite:</strong></p>
+            <ul>
+                <li>Sostener y ampliar nuestros programas de atención integral, asesoría jurídica, formación comunitaria
+                    y fortalecimiento social.</li>
+                <li>Brindar acceso oportuno a medicamentos, insumos médicos y recursos básicos esenciales para la salud
+                    y el bienestar.</li>
+                <li>Impulsar proyectos innovadores que promuevan la equidad, la inclusión y la justicia social.</li>
+                <li>Garantizar la sostenibilidad de nuestras acciones, asegurando que cada persona atendida reciba el
+                    acompañamiento y los servicios que merece.</li>
+            </ul>
+            <p><strong>¿Cómo puedes realizar tu apoyo económico?</strong></p>
+            <ul>
+                <li>A través de donaciones monetarias únicas o periódicas.</li>
+                <li>Mediante transferencias bancarias o electrónicas seguras.</li>
+                <li>Participando en campañas y eventos solidarios organizados por FUNFOREE.</li>
+            </ul>
+            <p>Cada aporte es un paso hacia un futuro más justo y esperanzador. Con tu apoyo económico, juntos podemos
+                seguir forjando esperanza y equidad para quienes enfrentan barreras y desafíos en su día a día.</p>
+            <p><strong>¡Súmate a nuestra causa y transforma vidas con tu generosidad!</strong></p>
+        </div>
+
+        <div class="columna">
+            <h2>Formulario de Donación</h2>
+            <form id="form-apoyo-economico" data-action="php/apoyo-economico.php">
+                <label for="nombre">Nombre completo</label>
+                <input type="text" id="nombre" name="nombre" required>
+
+                <label for="correo">Correo electrónico</label>
+                <input type="email" id="correo" name="correo" required>
+
+                <label for="monto">Monto de donación (COP)</label>
+                <input type="number" id="monto" name="monto" min="1" required>
+
+                <label for="mensaje">Mensaje (opcional)</label>
+                <textarea id="mensaje" name="mensaje" rows="4"></textarea>
+
+                <button type="submit">Donar Ahora</button>
+            </form>
+            <div class="imagen-donacion">
+                <img src="./img/imagen-donacion.jpg" alt="Apoyo Económico">
+            </div>
+        </div>
+    </div>
+
+    <footer>
+        <div>
+            <p>Contacto: <a href="mailto:contacto@funforee.com">contacto@funforee.com</a></p>
+            <p>Teléfono móvil: 3151273435</p>
+            <p>WhatsApp: 3142764121</p>
+            <p>Dirección: Calle 2 Sur No. 13A - 03, Urbanización El Bosque II etapa</p>
+            <div class="redes-sociales">
+                <a href="https://wa.me/5731527435" target="_blank" title="WhatsApp"><img src="./img/whatsapp-icon.png"
+                        alt="WhatsApp" class="icono-red"></a>
+                <a href="https://instagram.com/" target="_blank" title="Instagram"><img src="./img/instagram-icon.png"
+                        alt="Instagram" class="icono-red"></a>
+                <a href="https://facebook.com/" target="_blank" title="Facebook"><img src="./img/facebook-icon.png"
+                        alt="Facebook" class="icono-red"></a>
+                <a href="https://tiktok.com/" target="_blank" title="TikTok"><img src="./img/tiktok-icon.png"
+                        alt="TikTok" class="icono-red"></a>
+            </div>
+        </div>
+    </footer>
+    <script src="js/script.js"></script>
+<<<<<<< HEAD
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            const form = document.getElementById('form-apoyo-economico');
+            if (form) {
+                form.addEventListener('submit', function (e) {
+                    e.preventDefault();
+
+                    const formData = new FormData(form);
+                    const action = form.getAttribute('data-action');
+
+                    fetch(action, {
+                        method: 'POST',
+                        body: formData
+                    })
+                        .then(response => {
+                            if (!response.ok) throw new Error('Error en la petición');
+                            return response.json();
+                        })
+                        .then(data => {
+                            if (data.success) {
+                                alert('¡Gracias por tu donación! Pronto nos pondremos en contacto contigo.');
+                                form.reset();
+                            } else {
+                                alert('Ocurrió un error: ' + (data.error || 'Intenta nuevamente.'));
+                            }
+                        })
+                        .catch(error => {
+                            alert('Ocurrió un error al enviar la donación. Intenta nuevamente.');
+                        });
+                });
+            }
+        });
+    </script>
+
+
+=======
+>>>>>>> f744de1 (funforee)
+
+</body>
+
+</html>
